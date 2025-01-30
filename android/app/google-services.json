@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "675699866308",
+    "project_id": "thirantask",
+    "storage_bucket": "thirantask.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675699866308:android:3e38714fb9cee50f5fe791",
+        "android_client_info": {
+          "package_name": "com.example.github_stars_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ubEPvN5etIYzfassNr2r9OjQYKYlcRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
