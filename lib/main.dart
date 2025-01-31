@@ -10,28 +10,22 @@ import 'package:github_stars_app/core/apiService.dart';
 import 'package:github_stars_app/core/databaseHelper.dart';
 import 'package:github_stars_app/core/firebaseService.dart';
 import 'package:github_stars_app/core/gitRepo.dart';
+import 'package:github_stars_app/core/malService.dart';
 import 'package:github_stars_app/core/tickerRepo.dart';
 import 'package:github_stars_app/firebase_options.dart';
+import 'package:github_stars_app/model/transactinModel.dart';
 import 'package:github_stars_app/screens/main_page.dart';
 import 'package:workmanager/workmanager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Workmanager().initialize(
-    callbackDispatcher,
-    isInDebugMode: true,
-  );
+  Workmanager().initialize(callbackDispatcher, isInDebugMode: true);
+  Workmanager().registerPeriodicTask("dailyEmailTask", "sendErrorEmailTask",
+      frequency: Duration(days: 1));
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   final FirebaseMessaging messaging = FirebaseMessaging.instance;
   await messaging.requestPermission();
   runApp(const MainApp());
-}
-
-void callbackDispatcher() {
-  Workmanager().executeTask((task, inputData) {
-    print("Executing task: $task");
-    return Future.value(true); // Indicate success
-  });
 }
 
 class MainApp extends StatelessWidget {

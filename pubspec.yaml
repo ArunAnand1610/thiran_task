@@ -20,6 +20,7 @@ dependencies:
   path_provider: ^2.1.5
   intl: ^0.20.2
   workmanager: ^0.5.2
+  mailer: ^6.4.1
   
 
 dev_dependencies:
